@@ -1,0 +1,39 @@
+//GoodQueue numbers are said to be numbers in which
+*All the digits in the number are distinct.
+*All the digits are less than or equal to 5.
+You are given two numbers L and R, and the task is to find the count of GoodQueue numbers in the range [L,R] inclusive of L and R.
+1<=L,R<=5*10^5 //
+import java.util.*;
+  import java.io.*;
+  
+  public class Main {
+    public static void main(String args[]) throws IOException {
+      
+      //write your code here
+      Scanner sc=new Scanner(System.in);
+      int t=sc.nextInt();
+      while(t-->0)
+      {
+        int l=sc.nextInt();
+        int r=sc.nextInt();int ct=0;
+        while(l<=r)
+        {
+          if(distinctAndLessThan5(l))ct++;
+          l++;
+        }
+        System.out.println(ct);
+      }
+    }
+    static boolean distinctAndLessThan5(int n)
+    {
+      Set<Integer> st=new HashSet<>();
+      while(n>0)
+      {
+        int t=n%10;
+        if(t>5||(!st.add(t)))return false;
+        n=n/10;
+      }
+      return true;
+    }
+  }(Important Notes 1: In Set data structure we cannot add duplicates, and on trying to add duplicate the add() function
+   returns false. 2: HashSet helps in insertion of large number of values in the set in constant time.)
