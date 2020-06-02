@@ -33,4 +33,6 @@ Asha gives you m queries, each query q[i] means, that q[i]−1number of operatio
         t=q+1;
       }
     }
-  }(This particular problem makes use of Priority Queue inorder to reduce the time complexity of O(n*m) to O(m*log n). 
+  }(This particular problem makes use of Priority Queue inorder to reduce the time complexity of O(n*m) to O(m*log n). And important thing
+  to note is that A PriorityQueue in Java does not have any restriction with regard to duplicate elements.) 
+  
