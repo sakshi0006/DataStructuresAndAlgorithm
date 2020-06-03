@@ -1,0 +1,42 @@
+//You are given a binary tree, you need to print the average of each level of the tree.
+
+Note - You have to complete findAverageLevel() function, no need to implement the tree.
+
+Input format
+The root of the tree is passed to the findAverageLevel().
+And the tree is constructed in level order format.
+
+Output format
+Print the average of each level of the tree(with 2 decimal digits precision) separated by space.//
+/*
+We need to complete the function findAverageLevel().
+For our reference:
+class Node
+{
+    long value;
+    Node left, right;
+    public Node(long item)
+    {
+        value = item;
+        left = right = null;
+    }
+}
+*/
+
+void findAverageLevel(Node node) {
+    Queue<Node> q1=new LinkedList(),q2=new LinkedList();
+    q2.offer(node);
+    while(!q2.isEmpty())
+    {
+      while(!q2.isEmpty())q1.offer(q2.poll());
+      float sum=0;int sz=0;
+      while(!q1.isEmpty())
+      {
+        Node tp=q1.poll();
+        sum+=tp.value;sz++;
+        if(tp.left!=null)q2.offer(tp.left);
+        if(tp.right!=null)q2.offer(tp.right);
+      }
+      System.out.printf("%.2f ",(sum/sz));
+    }
+}
