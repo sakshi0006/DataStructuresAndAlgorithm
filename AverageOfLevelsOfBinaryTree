@@ -40,3 +40,6 @@ void findAverageLevel(Node node) {
       System.out.printf("%.2f ",(sum/sz));
     }
 }
+(Important Notes : 1 : For level order traversal of Binary Tree , we use Queue data structure. 2 : In order to solve this question
+we can make use of two queues , one used for keeping all the elements of a particular level and another queue for doing the level 
+order traversal in FIFO order.)
